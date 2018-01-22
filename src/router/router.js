@@ -7,8 +7,8 @@ import {
     HashRouter as Router,
     Route,
     Link} from 'react-router-dom'
-import App from '../component/App.jsx'
-import TodoLists from '../component/TodoLists.jsx'
+import App from '../view/App.jsx'
+import TodoView from '../view/TodoView.jsx'
 
 
 const routes = [
@@ -16,8 +16,8 @@ const routes = [
         component: App,
         routes: [
             {
-                path: '/todolist',
-                component: TodoLists,
+                path: '/todoview',
+                component: TodoView,
             },
         ]
     }
