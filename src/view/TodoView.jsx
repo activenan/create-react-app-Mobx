@@ -21,7 +21,11 @@ class TodoView extends Component {
         </header>
         <ul>
           {
-            ObservableTodoStoreIns.todos.map((todo, idx) =>  <TodoItems  todo={ todo } key={ idx } />)
+            ObservableTodoStoreIns.todos.map((todo, idx) =>  
+            <TodoItems   todo={ todo } 
+                          key={ idx } 
+                          onRename={(todo) => ObservableTodoStoreIns.changeTaskName(todo)}
+                          onToggleCompleted = {(todo) => ObservableTodoStoreIns.toggleTaskStatus(todo)}  />)
           }
         </ul>
        

@@ -26,9 +26,18 @@ export default class ObservableTodoStore {
 		this.todos.push({
 			task: task,
 			completed: false,
-			assignee: null
+            assignee: null,
+        
 		});
-	}
+    }
+    
+    @action toggleTaskStatus (taskObj) {
+        taskObj.completed = !taskObj.completed
+    }
+
+    @action changeTaskName (taskObj) {
+        taskObj.task = prompt('Task name', taskObj.task) || taskObj.task
+    }
 }
 
 
