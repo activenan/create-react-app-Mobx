@@ -15,7 +15,7 @@ class TodoItem extends Component {
           />
           { todo.task }
           { todo.assignee
-            ? <small>{ todo.assignee.name }</small>
+            ? <small style={{backgroundColor:'orange',color:'white',marginLeft: 30 }}>{ todo.assignee.name }</small>
             : null
           }
       </li>
@@ -23,5 +23,7 @@ class TodoItem extends Component {
     }
   
   }
+
+
   
   export default TodoItem

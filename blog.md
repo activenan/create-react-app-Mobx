@@ -56,3 +56,20 @@ Reactions与computed value的不同之处是：computed value只是一个单纯�
 Reaction is roughly speaking sugar for: computed(expression).observe(action(sideEffect)) or autorun(() => action(sideEffect)(expression)
 ```
 
+## 自整理小知识点：{
+
+#1 @observable key = value 是 extendObservable(this, { key: value }) 的语法糖
+
+#2 @computed get propertyName() { } 在构造函数中调用的 extendObservable(this, { propertyName: get func() { } }) 的语法糖
+
+
+#3 每一个observable 值都可以通过 .get() 方法获取当前的值，也可以通过 .observe(callbacke) 来观察值的变化
+
+
+
+
+#}
+
+
+
+

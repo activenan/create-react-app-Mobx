@@ -2,8 +2,8 @@ import {observable,computed,action,useStrict,autorun} from 'mobx'
 
 useStrict(true)
 
-export default class ObservableTodoStore {
-    @observable todos = []
+export  class ObservableTodoStore {
+    @observable todos = []     
     @observable pendingRequests = 0
 
     constructor() {
@@ -38,6 +38,24 @@ export default class ObservableTodoStore {
     @action changeTaskName (taskObj) {
         taskObj.task = prompt('Task name', taskObj.task) || taskObj.task
     }
+    @action assign (taskObj,assignee ) {
+        taskObj.assignee = assignee
+    }
+    @action pendingRequestsUp () {
+        this.pendingRequests++;
+    }
+    @action pendingRequestsDown () {
+        this.pendingRequests--;
+    }
 }
 
 
+export  class peopleStore {
+    @observable assignees = [
+        { name: "Michel" },
+        { name: "Me" }
+    ]
+    @action changeAssignee () {
+
+    }
+}
